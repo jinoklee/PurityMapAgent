@@ -9,27 +9,19 @@ PurityMapAgent adds the copy-number profile, gene-level calls and an HTML report
 
 ---
 
-## 1. Requirements
+## 1. Prerequisite
 
-**Docker** only — the app, the analysis tools, the model and the databases all come in one Docker image.
+### Software
 
-| | Install |
+**Docker** — the app, the analysis tools, the model and the databases all come in one Docker image.
+
+| | Install first |
 |---|---|
-| **Linux** | [Docker Engine](https://docs.docker.com/engine/install/); to use an NVIDIA GPU, also the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) |
+| **Linux (Ubuntu)** | [Docker Engine](https://docs.docker.com/engine/install/); to use an NVIDIA GPU, also the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) |
 | **Windows** | [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/) (WSL 2); NVIDIA GPUs work |
 | **macOS** | not yet tested |
 
-### Get PurityMapAgent
-
-```bash
-git clone https://github.com/jinoklee/PurityMapAgent.git
-```
-
-(or download the ZIP from GitHub and unpack it)
-
----
-
-## 2. Prerequisite
+### Data
 
 | Item | Requirements | Where |
 |---|---|---|
@@ -43,31 +35,27 @@ The model and the annotation databases are already in the Docker image — no se
 
 ---
 
+## 2. Get PurityMapAgent
+
+Download **`PurityMapAgent-launcher.zip`** from the [Releases](https://github.com/jinoklee/PurityMapAgent/releases) page
+and unpack it anywhere. It holds only the launchers and a short `README.txt`  
+
+---
+
 ## 3. Running the analysis
 
 ### Start the app
 
-Double-click the launcher in the PurityMapAgent folder:
+Double-click the launcher in the unpacked `PurityMapAgent` folder:
 
 | | Launcher |
 |---|---|
 | **Windows** | `PurityMapAgent.bat` |
 | **Linux** | `PurityMapAgent.sh` (or run `./PurityMapAgent.sh` in a terminal) |
 
-The app opens in your browser at `http://127.0.0.1:8800`.
-The **first start downloads the PurityMapAgent image (about 10 GB)**; later starts take a few seconds.
-The folders of your computer are available in the app, so use your usual paths (`D:\data\...` on Windows, `/data/...` on Linux).
+The app opens in your browser at `http://127.0.0.1:8800`.  
+The **first start downloads the PurityMapAgent image (about 7 GB; keep about 20 GB free on the Docker disk)**.
 
-### Closing the window and quitting the app
-
-| | Close the window | Quit the app |
-|---|---|---|
-| How | close the browser tab or window | the **⏻** button at the top right of the app |
-| The app | **keeps running** | stops |
-| A running analysis | **keeps running** | stops — the app asks first. Run it again later and the finished steps are skipped |
-| To come back | double-click the launcher again — it opens the running app | double-click the launcher — it starts the app again |
-
-Turning off the computer or quitting Docker also quits the app.
 
 ### Analysis tab
 
@@ -84,11 +72,22 @@ One project folder per analysis:
 
 ### Results tab
 
-The samples of the open project as a table; click one to read its report.
-The chat panel answers questions about the report when an LLM is set (⚙ at the top right: provider, model, API key;
-the key is kept only while the app runs).
+The samples of the open project as a table; click one to read its report.  
+The chat panel answers questions about the report when an LLM is set (⚙ at the top right: provider, model, API key).
 
 ---
+
+### Closing the window and quitting the app
+
+| | Close the window | Quit the app |
+|---|---|---|
+| How | close the browser tab or window | the **⏻** button at the top right of the app |
+| The app | **keeps running** | stops |
+| A running analysis | **keeps running** | stops — the app asks first. Run it again later and the finished steps are skipped |
+| To come back | double-click the launcher again — it opens the running app | double-click the launcher — it starts the app again |
+
+Turning off the computer or quitting Docker also quits the app.
+
 
 ## 4. Results
 
