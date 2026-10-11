@@ -2,10 +2,10 @@
 
 **Deep-learning tumor purity estimation from 2D SNP depth–VAF maps**
 
-PurityMapAgent is [PurityMap](https://github.com/jinoklee/PurityMap) with an app: set up, run and read the analysis in the browser.  
+PurityMapAgent is [PurityMap](https://github.com/jinoklee/PurityMap) with an app that lets you set up, run and read the analysis in the browser.  
+
 PurityMap estimates tumor purity from sequencing data. SNP depth and variant allele fraction (VAF) across the genome are
-drawn as a 2D map, and a deep-learning model reads that map to predict purity.  
-PurityMapAgent adds the copy-number profile, gene-level calls and an HTML report for each sample.
+drawn as a 2D map, and a deep-learning model reads that map to predict purity. PurityMapAgent adds the copy-number profile, gene-level calls and an HTML report for each sample.
 
 ---
 
@@ -57,7 +57,7 @@ The app opens in your browser at `http://127.0.0.1:8800`.
 The **first start downloads the PurityMapAgent image (about 7 GB; keep about 20 GB free on the Docker disk)**.
 
 
-### Analysis tab
+### [Analysis tab]
 
 One project folder per analysis:
 
@@ -68,11 +68,11 @@ One project folder per analysis:
    A tumor with a normal of the same `patient_id` is analysed as paired; otherwise as tumor-only (needs a PoN).
 4. **Check**, then **Run**. Progress is shown per sample and step.
 
-[Where to start? (step by step)] in the chat panel walks through these steps one question at a time — no LLM needed.
+[Where to start? (step by step)] in the chat panel walks through these steps one question at a time — **no LLM needed.**
 
-### Results tab
+### [Results tab]
 
-The samples of the open project as a table; click one to read its report.  
+The samples of the open project are listed in a table. Click a sample to read its report.  
 The chat panel answers questions about the report when an LLM is set (⚙ at the top right: provider, model, API key).
 
 ---
